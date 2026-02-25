@@ -1,0 +1,137 @@
+<template>
+    <!-- WHY SAIYAN SECTION -->
+    <section class="why-saiyan-section">
+        <div class="why-header">
+            <h2 class="why-title">Why Saiyan?</h2>
+            <p class="why-subtitle">Choose your insurance partner smartly</p>
+        </div>
+
+        <div class="features-grid">
+            <!-- Feature 1: First in Morocco -->
+            <article class="feature-card feature-highlight">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:lead" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">First in Morocco</h3>
+                <p class="feature-description">
+                    As a leading platform for insurance types
+                </p>
+            </article>
+
+            <!-- Feature 2: One-stop Destination -->
+            <article class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:dashboard" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">One-stop Insurance Destination</h3>
+                <p class="feature-description">
+                    We provide you with a variety of options from insurance companies, along with a seamless and quick comparison and purchasing process that meets your needs
+                </p>
+            </article>
+
+            <!-- Feature 3: Transparency -->
+            <article class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:endorsement" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">Transparency and Clarity</h3>
+                <p class="feature-description">
+                    We take clarity and simplicity very seriously, which is why we ensure the use of straightforward terminology
+                </p>
+            </article>
+
+            <!-- Feature 4: Expertise -->
+            <article class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:skill_entity" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">Technical and Legal Expertise</h3>
+                <p class="feature-description">
+                    Reliable efficiency and quick answers to all your inquiries
+                </p>
+            </article>
+
+            <!-- Feature 5: Wide Range -->
+            <article class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:choice" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">Widest Range of Insurance Offers</h3>
+                <p class="feature-description">
+                    We provide you with a wide network of insurance company options
+                </p>
+            </article>
+
+            <!-- Feature 6: Pricing -->
+            <article class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <lightning-icon 
+                        icon-name="standard:currency" 
+                        size="large"
+                        class="feature-icon">
+                    </lightning-icon>
+                </div>
+                <h3 class="feature-title">Uniform Pricing</h3>
+                <p class="feature-description">
+                    We guarantee prices that match or are lower than those offered by insurance companies through our exclusive deals for our customers
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-intro">
+                Hello! Here you'll find answers to most of the questions and inquiries related to Saiyan. 
+                If you still need help, you can send your inquiry or contact customer service anytime on the number 
+                <strong class="phone-highlight">0561451021</strong>
+            </p>
+        </div>
+
+        <div class="faq-accordion">
+            <template for:each={faqItems} for:item="faq">
+                <div key={faq.id} class="faq-item">
+                    <button 
+                        class={faq.buttonClass} 
+                        data-id={faq.id}
+                        onclick={handleFaqToggle}
+                        aria-expanded={faq.isOpen}>
+                        <span class="faq-question">{faq.question}</span>
+                        <lightning-icon 
+                            icon-name="utility:chevrondown" 
+                            size="small"
+                            class="chevron-icon">
+                        </lightning-icon>
+                    </button>
+                    <div class={faq.contentClass}>
+                        <div class="faq-answer-inner">
+                            <p>{faq.answer}</p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+   </section>
+</template>

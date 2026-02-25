@@ -1,0 +1,782 @@
+/* ========================================
+   WHY SAIYAN - ULTRA CINEMATIC DESIGN
+   Premium Hollywood-Level Effects
+   ======================================== */
+
+/* CSS Variables */
+:host {
+    --primary-blue: #0066ff;
+    --primary-purple: #8b5cf6;
+    --primary-pink: #ec4899;
+    --dark-bg: #0a0e27;
+    --darker-bg: #050816;
+    --glass-white: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --neon-glow: 0 0 20px rgba(0, 102, 255, 0.5);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   WHY SAIYAN SECTION - Epic Hero Section
+   ======================================== */
+
+.why-saiyan-section {
+    position: relative;
+    padding: 120px 20px;
+    background: radial-gradient(ellipse at top, #0a0e27 0%, #050816 100%);
+    overflow: hidden;
+    perspective: 2000px;
+}
+
+/* Animated Starfield Background */
+.why-saiyan-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    opacity: 0.4;
+    animation: moveStars 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveStars {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Northern Lights Effect */
+.why-saiyan-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(ellipse at 30% 20%, rgba(0, 102, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 60%);
+    animation: auroraMove 25s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes auroraMove {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-20px, 20px) rotate(5deg);
+        opacity: 0.6;
+    }
+}
+
+/* Floating Particles */
+.why-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+/* Header Section */
+.why-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: 10;
+}
+
+/* Cinematic Title with Glow */
+.why-title {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #0066ff 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 25px 0;
+    letter-spacing: -2px;
+    position: relative;
+    display: inline-block;
+    animation: titleEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    text-shadow: 0 0 80px rgba(0, 102, 255, 0.5);
+}
+
+@keyframes titleEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Glowing Text Effect */
+.why-title::before {
+    content: 'Why Saiyan?';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #0066ff 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(30px);
+    opacity: 0.8;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        filter: blur(30px);
+        opacity: 0.6;
+    }
+    50% {
+        filter: blur(40px);
+        opacity: 1;
+    }
+}
+
+/* Subtitle */
+.why-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 300;
+    margin: 0;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+    position: relative;
+}
+
+.why-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0066ff, transparent);
+    animation: lineExpand 1.5s ease-out 0.8s backwards;
+}
+
+@keyframes lineExpand {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100px;
+    }
+}
+
+/* ========================================
+   FEATURES GRID - 3D Glass Cards
+   ======================================== */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Premium Glass Morphism Cards */
+.feature-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 55px 40px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Gradient Border Animation */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, #0066ff, #8b5cf6, #ec4899, #0066ff);
+    background-size: 300% 300%;
+    border-radius: 30px;
+    z-index: -2;
+    opacity: 0;
+    filter: blur(10px);
+    animation: gradientRotate 8s linear infinite;
+    transition: opacity 0.6s ease;
+}
+
+@keyframes gradientRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Inner Glow on Hover */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(0, 102, 255, 0.15) 0%, 
+                transparent 50%);
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+/* Hover State - Epic 3D Lift */
+.feature-card:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 
+        0 40px 80px rgba(0, 102, 255, 0.3),
+        0 0 100px rgba(0, 102, 255, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 102, 255, 0.6);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+}
+
+/* Highlighted Card - Featured */
+.feature-highlight {
+    background: linear-gradient(135deg, 
+        rgba(0, 102, 255, 0.1) 0%, 
+        rgba(139, 92, 246, 0.1) 100%);
+    border: 2px solid rgba(0, 102, 255, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 102, 255, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.feature-highlight::before {
+    opacity: 0.6;
+}
+
+/* Icon Wrapper - Floating 3D Sphere */
+.feature-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 35px;
+    background: linear-gradient(135deg, #0066ff 0%, #8b5cf6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: iconFloat 4s ease-in-out infinite;
+    box-shadow: 
+        0 20px 40px rgba(0, 102, 255, 0.4),
+        0 0 60px rgba(0, 102, 255, 0.3),
+        inset 0 -8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Outer Ring Effect */
+.feature-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 2px solid rgba(0, 102, 255, 0.3);
+    border-radius: 50%;
+    animation: ringPulse 3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(-6px) rotate(-5deg);
+    }
+}
+
+/* Icon Hover - Explosive Spin */
+.feature-card:hover .feature-icon-wrapper {
+    transform: scale(1.2) rotate(360deg) translateY(-8px);
+    box-shadow: 
+        0 30px 60px rgba(0, 102, 255, 0.6),
+        0 0 100px rgba(0, 102, 255, 0.5),
+        inset 0 -8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+    --slds-c-icon-color-foreground-default: white;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+}
+
+/* Text Styles */
+.feature-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+    transition: all 0.4s ease;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card:hover .feature-title {
+    background: linear-gradient(135deg, #0066ff 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 102, 255, 0.6);
+}
+
+.feature-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.8;
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+.feature-card:hover .feature-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   FAQ SECTION - Premium Accordion
+   ======================================== */
+
+.faq-section {
+    position: relative;
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #050816 0%, #0a0e27 100%);
+    overflow: hidden;
+    margin-bottom: 0 !important;
+}
+
+/* Ambient Light Effect */
+.faq-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(0, 102, 255, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.15) 0%, transparent 60%);
+    animation: lightShift 20s ease-in-out infinite;
+}
+
+@keyframes lightShift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+}
+
+/* FAQ Header */
+.faq-header {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.faq-title {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #0066ff 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 30px 0;
+    letter-spacing: -1px;
+    animation: fadeInUp 1s ease-out backwards;
+    text-shadow: 0 0 60px rgba(0, 102, 255, 0.5);
+}
+
+.faq-intro {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.9;
+    margin: 0;
+}
+
+.phone-highlight {
+    color: #0066ff;
+    font-weight: 800;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, #0066ff 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.phone-highlight:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.8));
+}
+
+/* FAQ Accordion Container */
+.faq-accordion {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+/* FAQ Item - Glass Card */
+.faq-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Gradient Accent Bar */
+.faq-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #0066ff, #8b5cf6, #ec4899);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover & Active State */
+.faq-item:hover {
+    transform: translateX(15px);
+    box-shadow: 
+        -15px 0 40px rgba(0, 102, 255, 0.3),
+        0 15px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 102, 255, 0.5);
+}
+
+.faq-item:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+/* FAQ Button */
+.faq-button {
+    width: 100%;
+    padding: 35px 40px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+.faq-button:hover {
+    background: linear-gradient(90deg, 
+        rgba(0, 102, 255, 0.08) 0%, 
+        transparent 100%);
+}
+
+.faq-button-active {
+    background: linear-gradient(90deg, 
+        rgba(0, 102, 255, 0.15) 0%, 
+        rgba(139, 92, 246, 0.1) 100%);
+}
+
+.faq-question {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    flex: 1;
+    padding-right: 30px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+.faq-button:hover .faq-question,
+.faq-button-active .faq-question {
+    background: linear-gradient(135deg, #0066ff 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+}
+
+/* Chevron Icon */
+.chevron-icon {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --slds-c-icon-color-foreground-default: #0066ff;
+    filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.6));
+}
+
+.chevron-up {
+    transform: rotate(180deg) scale(1.1);
+    --slds-c-icon-color-foreground-default: #ec4899;
+}
+
+/* FAQ Content */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-content-open {
+    max-height: 700px;
+}
+
+.faq-answer-inner {
+    padding: 0 40px 35px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    animation: contentFadeIn 0.6s ease-out;
+}
+
+@keyframes contentFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-answer-inner p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 2;
+    margin: 30px 0 0 0;
+}
+
+/* ========================================
+   STAGGERED ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px) rotateY(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+.feature-card {
+    animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+.faq-item {
+    animation: slideFromLeft 0.8s ease-out backwards;
+}
+
+.faq-item:nth-child(1) { animation-delay: 0.15s; }
+.faq-item:nth-child(2) { animation-delay: 0.3s; }
+.faq-item:nth-child(3) { animation-delay: 0.45s; }
+.faq-item:nth-child(4) { animation-delay: 0.6s; }
+.faq-item:nth-child(5) { animation-delay: 0.75s; }
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .why-title {
+        font-size: 3rem;
+    }
+    
+    .why-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .feature-card {
+        padding: 45px 30px;
+    }
+    
+    .faq-title {
+        font-size: 2.8rem;
+    }
+    
+    .faq-button {
+        padding: 28px 25px;
+    }
+    
+    .faq-question {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-saiyan-section,
+    .faq-section {
+        padding: 80px 15px;
+    }
+    
+    .why-title {
+        font-size: 2.2rem;
+    }
+    
+    .feature-icon-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .feature-title {
+        font-size: 1.4rem;
+    }
+    
+    .faq-title {
+        font-size: 2.2rem;
+    }
+    
+    .faq-answer-inner {
+        padding: 0 25px 25px 25px;
+    }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+.feature-card,
+.faq-item,
+.feature-icon-wrapper {
+    will-change: transform;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
